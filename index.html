@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!---
+         ________  ________   ______   __       __        ________  __    __   ______   __    __   ______   __    __   ______   ________ 
+/        |/        | /      \ /  \     /  |      /        |/  |  /  | /      \ /  |  /  | /      \ /  \  /  | /      \ /        |
+$$$$$$$$/ $$$$$$$$/ /$$$$$$  |$$  \   /$$ |      $$$$$$$$/ $$ |  $$ |/$$$$$$  |$$ |  $$ |/$$$$$$  |$$  \ $$ |/$$$$$$  |$$$$$$$$/ 
+   $$ |   $$ |__    $$ |__$$ |$$$  \ /$$$ |      $$ |__    $$  \/$$/ $$ |  $$/ $$ |__$$ |$$ |__$$ |$$$  \$$ |$$ | _$$/ $$ |__    
+   $$ |   $$    |   $$    $$ |$$$$  /$$$$ |      $$    |    $$  $$<  $$ |      $$    $$ |$$    $$ |$$$$  $$ |$$ |/    |$$    |   
+   $$ |   $$$$$/    $$$$$$$$ |$$ $$ $$/$$ |      $$$$$/      $$$$  \ $$ |   __ $$$$$$$$ |$$$$$$$$ |$$ $$ $$ |$$ |$$$$ |$$$$$/    
+   $$ |   $$ |_____ $$ |  $$ |$$ |$$$/ $$ |      $$ |_____  $$ /$$  |$$ \__/  |$$ |  $$ |$$ |  $$ |$$ |$$$$ |$$ \__$$ |$$ |_____ 
+   $$ |   $$       |$$ |  $$ |$$ | $/  $$ |      $$       |$$ |  $$ |$$    $$/ $$ |  $$ |$$ |  $$ |$$ | $$$ |$$    $$/ $$       |
+   $$/    $$$$$$$$/ $$/   $$/ $$/      $$/       $$$$$$$$/ $$/   $$/  $$$$$$/  $$/   $$/ $$/   $$/ $$/   $$/  $$$$$$/  $$$$$$$$/ 
+                                                                                                                                                                                                                                                                                                                                                                                                                                  
+--->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>TEAM EXCHANGE</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <style type="text/css">
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        font-size: 24px;
+        font-weight: 100;
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+      html .content,
+      body .content {
+        text-align: center;
+        position: relative;
+        top: 30%;
+        transform: translateX(-50%), translateY(-50%);
+        font-family: "Roboto Mono", monospace;
+        font-size: 23px;
+      }
+      html .content span,
+      body .content span {
+        width: 10px;
+        display: inline-block;
+      }
+      .content span.ltr {
+        font-size: 41px;
+      }
+      .content span.ltr2 {
+        font-size: 21px;
+      }
+      .footer {
+        text-align: center;
+        position: absolute;
+        bottom: 30px;
+        width: 100%;
+        transform: translateX(-50%), translateY(-50%);
+        font-family: "Roboto Mono", monospace;
+        font-size: 23px;
+      }
+      body {
+        position: relative;
+      }
+      .footer p {
+        text-align: center;
+        width: 100%; /*position: absolute;*/
+        bottom: 10px;
+      }
+      .r2 span {
+        width: 0px !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <div class="random">
+        <span class="nbr ltr">0</span> <span class="nbr ltr">1</span>
+        <span class="nbr ltr">0</span> <span class="nbr ltr">1</span>
+        <span class="nbr ltr">0</span> <span class="nbr ltr">1</span>
+        <span class="nbr ltr">0</span> <span class="nbr ltr">1</span>
+        <span class="nbr ltr">0</span> <span class="nbr ltr">1</span>
+        <span class="nbr ltr">0</span> <span class="nbr ltr">1</span>
+        <span class="nbr ltr">0</span>
+      </div>
+      <div class="random r2">
+        <span class="nbr2 ltr2">0</span> <span class="nbr2 ltr2">0</span>
+        <span class="nbr2 ltr2">0</span> <span class="nbr2 ltr2">0</span>
+        <span class="nbr2 ltr2">0</span> <span class="nbr2 ltr2">0</span>
+        <span class="nbr2 ltr2">0</span> <span class="nbr2 ltr2">0</span>
+        <span class="nbr2 ltr2">0</span> <span class="nbr2 ltr2">0</span>
+        <span class="nbr2 ltr2">0</span> <span class="nbr2 ltr2">0</span>
+        <span class="nbr2 ltr2">0</span> <span class="nbr2 ltr2">0</span>
+        <span class="nbr2 ltr2">0</span> <span class="nbr2 ltr2">0</span>
+        <span class="nbr2 ltr2">0</span> <span class="nbr2 ltr2">0</span>
+      </div>
+    </div>
+    <div class="footer"><p>2020 SINGAPORE</p></div>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        var $randomnbr = $(".nbr");
+        var $gg = $randomnbr;
+        var $randomnbr2 = $(".nbr2");
+        var $timer = 45;
+        var $it;
+        var $it2;
+        var $data = 0;
+        var $data2 = 0;
+        var index;
+        var index2;
+        var change;
+        var change2;
+        var letters = [
+          "T",
+          "E",
+          "A",
+          "M",
+          ".",
+          "E",
+          "X",
+          "C",
+          "H",
+          "A",
+          "N",
+          "G",
+          "E",
+        ];
+        var letters2 = [
+          "e",
+          "S",
+          "P",
+          "O",
+          "R",
+          "T",
+          "S",
+          ".",
+          "T",
+          "E",
+          "C",
+          "H",
+          "N",
+          "O",
+          "L",
+          "O",
+          "G",
+          "Y",
+        ];
+        $randomnbr.each(function () {
+          change = Math.round(Math.random() * 100);
+          $(this).attr("data-change", change);
+        });
+        $randomnbr2.each(function () {
+          change = Math.round(Math.random() * 100);
+          $(this).attr("data-change", change);
+        });
+        function random() {
+          return Math.round(Math.random() * 9);
+        }
+        function select() {
+          return Math.round(Math.random() * $randomnbr.length + 1);
+        }
+        function select2() {
+          return Math.round(Math.random() * $randomnbr2.length + 1);
+        }
+        function value() {
+          $(".nbr:nth-child(" + select() + ")").html("" + random() + "");
+          $(".nbr:nth-child(" + select() + ")").attr("data-number", $data);
+          $data++;
+          $randomnbr.each(function () {
+            if (
+              parseInt($(this).attr("data-number")) >
+              parseInt($(this).attr("data-change"))
+            ) {
+              index = $(".ltr").index(this);
+              $(this).html(letters[index]);
+              $(this).removeClass("nbr");
+            }
+          });
+        }
+        function value2() {
+          $(".nbr2:nth-child(" + select2() + ")").html("" + random() + "");
+          $(".nbr2:nth-child(" + select2() + ")").attr("data-number", $data2);
+          $data2++;
+          $randomnbr2.each(function () {
+            if (
+              parseInt($(this).attr("data-number")) >
+              parseInt($(this).attr("data-change"))
+            ) {
+              index2 = $(".ltr2").index(this);
+              $(this).html(letters2[index2]);
+              $(this).removeClass("nbr2");
+            }
+          });
+        }
+        $it = setInterval(value, $timer);
+        $it = setInterval(value2, $timer);
+      });
+    </script>
+    <script>
+      window.intercomSettings = {
+        app_id: "cohywz5o",
+      };
+    </script>
+
+    <script>
+      window.intercomSettings = {
+        app_id: "eak28mt3",
+      };
+    </script>
+
+    <script>
+      // We pre-filled your app ID in the widget URL: 'https://widget.intercom.io/widget/eak28mt3'
+      (function () {
+        var w = window;
+        var ic = w.Intercom;
+        if (typeof ic === "function") {
+          ic("reattach_activator");
+          ic("update", w.intercomSettings);
+        } else {
+          var d = document;
+          var i = function () {
+            i.c(arguments);
+          };
+          i.q = [];
+          i.c = function (args) {
+            i.q.push(args);
+          };
+          w.Intercom = i;
+          var l = function () {
+            var s = d.createElement("script");
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = "https://widget.intercom.io/widget/eak28mt3";
+            var x = d.getElementsByTagName("script")[0];
+            x.parentNode.insertBefore(s, x);
+          };
+          if (w.attachEvent) {
+            w.attachEvent("onload", l);
+          } else {
+            w.addEventListener("load", l, false);
+          }
+        }
+      })();
+    </script>
+    <!---
+ ________  ________   ______   __       __        ________  __    __   ______   __    __   ______   __    __   ______   ________ 
+/        |/        | /      \ /  \     /  |      /        |/  |  /  | /      \ /  |  /  | /      \ /  \  /  | /      \ /        |
+$$$$$$$$/ $$$$$$$$/ /$$$$$$  |$$  \   /$$ |      $$$$$$$$/ $$ |  $$ |/$$$$$$  |$$ |  $$ |/$$$$$$  |$$  \ $$ |/$$$$$$  |$$$$$$$$/ 
+   $$ |   $$ |__    $$ |__$$ |$$$  \ /$$$ |      $$ |__    $$  \/$$/ $$ |  $$/ $$ |__$$ |$$ |__$$ |$$$  \$$ |$$ | _$$/ $$ |__    
+   $$ |   $$    |   $$    $$ |$$$$  /$$$$ |      $$    |    $$  $$<  $$ |      $$    $$ |$$    $$ |$$$$  $$ |$$ |/    |$$    |   
+   $$ |   $$$$$/    $$$$$$$$ |$$ $$ $$/$$ |      $$$$$/      $$$$  \ $$ |   __ $$$$$$$$ |$$$$$$$$ |$$ $$ $$ |$$ |$$$$ |$$$$$/    
+   $$ |   $$ |_____ $$ |  $$ |$$ |$$$/ $$ |      $$ |_____  $$ /$$  |$$ \__/  |$$ |  $$ |$$ |  $$ |$$ |$$$$ |$$ \__$$ |$$ |_____ 
+   $$ |   $$       |$$ |  $$ |$$ | $/  $$ |      $$       |$$ |  $$ |$$    $$/ $$ |  $$ |$$ |  $$ |$$ | $$$ |$$    $$/ $$       |
+   $$/    $$$$$$$$/ $$/   $$/ $$/      $$/       $$$$$$$$/ $$/   $$/  $$$$$$/  $$/   $$/ $$/   $$/ $$/   $$/  $$$$$$/  $$$$$$$$/ 
+                                                                                                                                 
+                                                                                                                                 
+                                                                                                                                                                 
+--->
+  </body>
+</html>
