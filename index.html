@@ -24,6 +24,10 @@ $$$$$$$$/ $$$$$$$$/ /$$$$$$  |$$  \   /$$ |      $$$$$$$$/ $$ |  $$ |/$$$$$$  |$
     />
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <style type="text/css">
+      @font-face {
+        font-family: "TEAMDAO";
+        src: url("TEAMDAO-Regular.otf");
+      }
       html,
       body {
         margin: 0;
@@ -40,8 +44,9 @@ $$$$$$$$/ $$$$$$$$/ /$$$$$$  |$$  \   /$$ |      $$$$$$$$/ $$ |  $$ |/$$$$$$  |$
         position: relative;
         top: 30%;
         transform: translateX(-50%), translateY(-50%);
-        font-family: "Roboto Mono", monospace;
+        font-family: "TEAMDAO","Roboto Mono", monospace;
         font-size: 23px;
+        letter-spacing: 12px;
       }
       html .content span,
       body .content span {
@@ -60,7 +65,8 @@ $$$$$$$$/ $$$$$$$$/ /$$$$$$  |$$  \   /$$ |      $$$$$$$$/ $$ |  $$ |/$$$$$$  |$
         bottom: 30px;
         width: 100%;
         transform: translateX(-50%), translateY(-50%);
-        font-family: "Roboto Mono", monospace;
+        font-family: "TEAMDAO","Roboto Mono", monospace;
+        letter-spacing: 12px;
         font-size: 23px;
       }
       body {
@@ -99,7 +105,7 @@ $$$$$$$$/ $$$$$$$$/ /$$$$$$  |$$  \   /$$ |      $$$$$$$$/ $$ |  $$ |/$$$$$$  |$
         <span class="nbr2 ltr2">0</span> <span class="nbr2 ltr2">0</span>
       </div>
     </div>
-    <div class="footer"><p>2020 SINGAPORE</p></div>
+    <div class="footer"><p>2020&nbsp;SINGAPORE</p></div>
     <script type="text/javascript">
       $(document).ready(function () {
         var $randomnbr = $(".nbr");
