@@ -44,7 +44,7 @@ $$$$$$$$/ $$$$$$$$/ /$$$$$$  |$$  \   /$$ |      $$$$$$$$/ $$ |  $$ |/$$$$$$  |$
         position: relative;
         top: 30%;
         transform: translateX(-50%), translateY(-50%);
-        font-family: "TEAMDAO","Roboto Mono", monospace;
+        font-family: "TEAMDAO", "Roboto Mono", monospace;
         font-size: 23px;
         letter-spacing: 12px;
       }
@@ -65,7 +65,7 @@ $$$$$$$$/ $$$$$$$$/ /$$$$$$  |$$  \   /$$ |      $$$$$$$$/ $$ |  $$ |/$$$$$$  |$
         bottom: 30px;
         width: 100%;
         transform: translateX(-50%), translateY(-50%);
-        font-family: "TEAMDAO","Roboto Mono", monospace;
+        font-family: "TEAMDAO", "Roboto Mono", monospace;
         letter-spacing: 12px;
         font-size: 23px;
       }
@@ -107,6 +107,18 @@ $$$$$$$$/ $$$$$$$$/ /$$$$$$  |$$  \   /$$ |      $$$$$$$$/ $$ |  $$ |/$$$$$$  |$
     </div>
     <div class="footer"><p>2020&nbsp;SINGAPORE</p></div>
     <script type="text/javascript">
+      // dark theme update
+      var d = new Date();
+      var n = d.getHours();
+      if (n > 6 && n < 17) {
+
+        document.body.style.backgroundColor = "#fff";
+        document.body.style.color = "#333";
+      } else {
+        document.body.style.backgroundColor = "#000";
+        document.body.style.color = "#fff";
+      }
+
       $(document).ready(function () {
         var $randomnbr = $(".nbr");
         var $gg = $randomnbr;
@@ -205,52 +217,6 @@ $$$$$$$$/ $$$$$$$$/ /$$$$$$  |$$  \   /$$ |      $$$$$$$$/ $$ |  $$ |/$$$$$$  |$
         $it = setInterval(value, $timer);
         $it = setInterval(value2, $timer);
       });
-    </script>
-    <script>
-      window.intercomSettings = {
-        app_id: "cohywz5o",
-      };
-    </script>
-
-    <script>
-      window.intercomSettings = {
-        app_id: "eak28mt3",
-      };
-    </script>
-
-    <script>
-      // We pre-filled your app ID in the widget URL: 'https://widget.intercom.io/widget/eak28mt3'
-      (function () {
-        var w = window;
-        var ic = w.Intercom;
-        if (typeof ic === "function") {
-          ic("reattach_activator");
-          ic("update", w.intercomSettings);
-        } else {
-          var d = document;
-          var i = function () {
-            i.c(arguments);
-          };
-          i.q = [];
-          i.c = function (args) {
-            i.q.push(args);
-          };
-          w.Intercom = i;
-          var l = function () {
-            var s = d.createElement("script");
-            s.type = "text/javascript";
-            s.async = true;
-            s.src = "https://widget.intercom.io/widget/eak28mt3";
-            var x = d.getElementsByTagName("script")[0];
-            x.parentNode.insertBefore(s, x);
-          };
-          if (w.attachEvent) {
-            w.attachEvent("onload", l);
-          } else {
-            w.addEventListener("load", l, false);
-          }
-        }
-      })();
     </script>
     <!---
  ________  ________   ______   __       __        ________  __    __   ______   __    __   ______   __    __   ______   ________ 
